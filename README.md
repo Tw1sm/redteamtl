@@ -1,10 +1,9 @@
 # Red Team Timeline
 
-A visual timeline tool for planning and documenting red team / blue team security assessments. Built with React, TypeScript, and Vite.
+A reporting tool for visualizing the timeline of significant red team & blue team events.
 
 ### Example
 https://github.com/user-attachments/assets/50565644-73f2-47e3-a14d-bab803875ea3
-
 
 
 ### Exported PNG
@@ -13,6 +12,7 @@ https://github.com/user-attachments/assets/50565644-73f2-47e3-a14d-bab803875ea3
 
 
 ## Quick Start
+The app runs locally in a Docker container:
 
 ```bash
 docker compose up -d
@@ -36,5 +36,5 @@ npm run dev
 - React 19 + TypeScript
 - Vite
 - date-fns
-- html-to-image (PNG export)
-- Docker + Nginx (production)
+- html-to-image
+- Docker + Nginx
