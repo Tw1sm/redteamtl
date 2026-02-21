@@ -250,7 +250,6 @@ export default function Timeline({
 
   const poleHeight = 30;
   const stackSpacing = 32;
-  const labelFanAngle = 8;
 
   const BASE_PX_PER_WEEK = 120;
   const numWeeks = Math.max(1, weekStarts.length);
@@ -316,8 +315,6 @@ export default function Timeline({
     const offset = poleHeight + lane * stackSpacing;
     const isSelected = selectedEventId === positioned.event.id;
     const isRed = team === "red";
-    const fanOffset = lane * labelFanAngle;
-
     const teamClass = isRed ? styles.eventRed : styles.eventBlue;
     const poleClass = isRed ? styles.flagPoleRed : styles.flagPoleBlue;
     const headClass = isRed ? styles.flagHeadRed : styles.flagHeadBlue;
@@ -357,15 +354,15 @@ export default function Timeline({
           className={`${styles.eventLabel} ${labelClass}`}
           style={
             isRed
-              ? { bottom: `${offset - 2}px`, left: `${14 + fanOffset}px` }
-              : { top: `${offset - 2}px`, left: `${14 + fanOffset}px` }
+              ? { bottom: `${offset - 2}px`, left: '14px' }
+              : { top: `${offset - 2}px`, left: '14px' }
           }
         >
           {positioned.event.description}
         </div>
         <div
           className={`${styles.tooltip} ${tooltipClass}`}
-          style={isRed ? { bottom: `${offset + 16}px` } : { top: `${offset + 16}px` }}
+          style={isRed ? { bottom: '24px' } : { top: '24px' }}
         >
           <div className={styles.tooltipDate}>
             {format(parseISO(positioned.event.date), "MMM d, yyyy")}

@@ -99,6 +99,10 @@
     transition: filter 0.2s;
 }
 
+.event:hover {
+    z-index: 20 !important;
+}
+
 .event:hover .flagPole {
     opacity: 1;
 }
@@ -203,7 +207,8 @@
     border-radius: 6px;
     padding: 8px 12px;
     white-space: pre-line;
-    max-width: 300px;
+    max-width: 450px;
+    min-width: 200px;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.15s;

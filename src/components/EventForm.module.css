@@ -1,7 +1,7 @@
 .form {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 12px;
     padding: 16px 20px;
     background: var(--bg-panel);
@@ -120,6 +120,7 @@
 }
 
 .submitBtn {
+    margin-top: 19px;
     padding: 8px 20px;
     font-size: 14px;
     font-weight: 600;

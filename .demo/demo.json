@@ -1,0 +1,134 @@
+{
+  "config": {
+    "title": "Acme Corp Assessment",
+    "startDate": "2026-02-16",
+    "endDate": "2026-03-20"
+  },
+  "events": [
+    {
+      "id": "fdc3506f-a68b-4680-a656-e0a603c2e59f",
+      "date": "2026-02-17",
+      "team": "red",
+      "description": "Social Engineering\nPhase Begins",
+      "lane": 1
+    },
+    {
+      "id": "1b461a5a-c09a-40b1-9d66-f066417cb317",
+      "date": "2026-02-24",
+      "team": "red",
+      "description": "Payload executed as\nACME\\john on WRK-STN-1",
+      "lane": 1
+    },
+    {
+      "id": "4777bd09-2f3d-4752-a17c-7dc5bf8cbece",
+      "date": "2026-02-26",
+      "team": "red",
+      "description": "Payload executed as\nACME\\jane on WRK-STN-2",
+      "lane": 2
+    },
+    {
+      "id": "5a46361d-f4b4-42e1-b548-0ca45edccf78",
+      "date": "2026-02-27",
+      "team": "blue",
+      "description": "WRK-STN-1 Quarantined",
+      "lane": 1
+    },
+    {
+      "id": "5d2c454a-57f0-4adc-b672-53ccf6006d00",
+      "date": "2026-02-19",
+      "team": "blue",
+      "description": "Suspicious email interactions\nreported by 2 users",
+      "lane": 1
+    },
+    {
+      "id": "8bd9c1a6-9afa-4c8c-bc80-56c5471e8f31",
+      "date": "2026-02-25",
+      "team": "red",
+      "description": "Begin Internal Enumeration",
+      "lane": 4
+    },
+    {
+      "id": "7810d56e-bdb9-4092-9923-177a164dbf9e",
+      "date": "2026-03-03",
+      "team": "red",
+      "description": "Entra Credentials\nExtracted from\nCI/CD Pipeline",
+      "lane": 1
+    },
+    {
+      "id": "4a5b450f-be64-4524-9396-b6fc36437ea7",
+      "date": "2026-02-23",
+      "team": "blue",
+      "description": "Detection Event A",
+      "lane": 3
+    },
+    {
+      "id": "9b09e66c-10cc-4b8a-8e7d-14df8501552c",
+      "date": "2026-03-06",
+      "team": "red",
+      "description": "Lateral Move A",
+      "lane": 3
+    },
+    {
+      "id": "c2b098e5-435f-4796-af5a-3644e7868343",
+      "date": "2026-03-09",
+      "team": "red",
+      "description": "Lateral Move B",
+      "lane": 1
+    },
+    {
+      "id": "cd57569f-9d1d-4ce7-8189-573b8407a746",
+      "date": "2026-03-09",
+      "team": "blue",
+      "description": "Suspicious DLL Load\nDetected on Host B",
+      "lane": 1
+    },
+    {
+      "id": "d9c4e5eb-bef3-4c9d-bda9-6942244ed480",
+      "date": "2026-03-09",
+      "team": "blue",
+      "description": "Host B Quarantined",
+      "lane": 3
+    },
+    {
+      "id": "b93b4b9f-5743-40bb-a7f5-9fc8aa539d3e",
+      "date": "2026-03-11",
+      "team": "red",
+      "description": "Objective ABC Complete",
+      "lane": 2
+    },
+    {
+      "id": "d592f189-ed12-4cec-8744-c95312bd6fa1",
+      "date": "2026-03-12",
+      "team": "blue",
+      "description": "Host A Compromise\nIdentified",
+      "lane": 4
+    },
+    {
+      "id": "7d74c28c-10ba-4cbb-8873-5509d73144e9",
+      "date": "2026-03-20",
+      "team": "red",
+      "description": "Assessment Cleanup",
+      "lane": 1
+    },
+    {
+      "date": "2026-03-06",
+      "team": "blue",
+      "description": "Detection Event B",
+      "lane": 4,
+      "id": "82dffc3c-243e-4087-b68a-a61fa3ce6555"
+    },
+    {
+      "date": "2026-03-16",
+      "team": "red",
+      "description": "Objective XYZ Complete",
+      "lane": 3,
+      "id": "ff3e4e9c-84b6-4498-ac93-dcccb282b86d"
+    }
+  ],
+  "colors": {
+    "redTeam": "#e74c3c",
+    "blueTeam": "#3498db",
+    "timelineBar": "#c2c2c2",
+    "flagPole": "#222222"
+  }
+}
