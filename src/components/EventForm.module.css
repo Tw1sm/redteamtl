@@ -1,0 +1,117 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dateInput,
+.descInput {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.dateInput:focus,
+.descInput:focus {
+    border-color: var(--border-hover);
+}
+
+.dateInput {
+    width: 160px;
+}
+
+.descInput {
+    width: 260px;
+}
+
+.teamToggle {
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.teamBtn {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--bg-input);
+    color: var(--text-dim);
+    transition: background 0.2s, color 0.2s;
+}
+
+.teamBtn:hover {
+    background: var(--bg-button);
+    color: var(--text-primary);
+}
+
+.teamBtn:first-child {
+    border-right: 1px solid var(--border-color);
+}
+
+.teamBtnRed {
+    background: var(--color-red-team);
+    color: #fff;
+}
+
+.teamBtnBlue {
+    background: var(--color-blue-team);
+    color: #fff;
+}
+
+.submitBtn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--color-success);
+    color: var(--bg-app);
+    border-radius: 4px;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.submitBtn:hover {
+    background: var(--color-success-hover);
+}
+
+.submitBtn:active {
+    background: var(--color-success-active);
+}
+
+.submitBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.error {
+    font-size: 11px;
+    color: var(--color-error);
+    min-height: 14px;
+}

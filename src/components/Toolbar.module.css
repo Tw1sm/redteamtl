@@ -1,0 +1,74 @@
+.toolbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 2rem 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-button);
+    border: 1px solid var(--border-button);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.button:hover {
+    background: var(--bg-button-hover);
+    border-color: var(--border-button-hover);
+}
+
+.button:active {
+    background: var(--bg-button-active);
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1000;
+    animation: toastIn 0.2s ease-out;
+    pointer-events: none;
+}
+
+.toastSuccess {
+    background: var(--toast-success-bg);
+    color: var(--color-success);
+    border: 1px solid color-mix(in srgb, var(--color-success) 30%, transparent);
+}
+
+.toastError {
+    background: var(--toast-error-bg);
+    color: var(--color-error);
+    border: 1px solid color-mix(in srgb, var(--color-error) 30%, transparent);
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

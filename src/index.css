@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+/*  ── Dark theme ── */
+[data-theme="dark"] {
+  --bg-app: #1a1a2e;
+  --bg-panel: #16213e;
+  --bg-input: #1a1a2e;
+  --border-color: #2a2a4a;
+  --border-hover: #555;
+  --text-primary: #e0e0e0;
+  --text-bright: #ffffff;
+  --text-muted: #8888a0;
+  --text-dim: #666;
+  --bg-button: #2a2a4a;
+  --bg-button-hover: #3a3a5a;
+  --bg-button-active: #4a4a6a;
+  --border-button: #3a3a5a;
+  --border-button-hover: #5a5a7a;
+  --color-success: #2ecc71;
+  --color-success-hover: #27ae60;
+  --color-success-active: #219a52;
+  --color-error: #e74c3c;
+  --toast-success-bg: #1a3a2a;
+  --toast-error-bg: #3a1a1a;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --row-hover-bg: rgba(255, 255, 255, 0.04);
+  --date-separator: #555;
+  --timeline-tick: #555;
+  --timeline-day-tick: #444;
+  --timeline-tick-label: #aaa;
+  --timeline-week-name: #ccc;
+  --timeline-week-dates: #777;
+  --timeline-date-label: #ccc;
+  --timeline-day-tick-label: #666;
+  --tooltip-bg: #16213e;
+  --tooltip-border: #2a2a4a;
+  --tooltip-shadow: rgba(0, 0, 0, 0.4);
+  --tooltip-date: #aaa;
+  --tooltip-desc: #e0e0e0;
+  --overflow-panel-bg: #16213e;
+  --overflow-item-hover: rgba(255, 255, 255, 0.06);
+  --overflow-item-date: #888;
+  --overflow-item-desc: #e0e0e0;
+}
+
+/*  ── Light theme ── */
+[data-theme="light"] {
+  --bg-app: #f5f5f5;
+  --bg-panel: #ffffff;
+  --bg-input: #ffffff;
+  --border-color: #d0d0d0;
+  --border-hover: #999;
+  --text-primary: #333333;
+  --text-bright: #111111;
+  --text-muted: #777777;
+  --text-dim: #999999;
+  --bg-button: #e8e8e8;
+  --bg-button-hover: #d8d8d8;
+  --bg-button-active: #c8c8c8;
+  --border-button: #d0d0d0;
+  --border-button-hover: #aaa;
+  --color-success: #27ae60;
+  --color-success-hover: #219a52;
+  --color-success-active: #1e8449;
+  --color-error: #e74c3c;
+  --toast-success-bg: #e8f8f0;
+  --toast-error-bg: #fde8e8;
+  --overlay-bg: rgba(0, 0, 0, 0.3);
+  --row-hover-bg: rgba(0, 0, 0, 0.04);
+  --date-separator: #aaa;
+  --timeline-tick: #bbb;
+  --timeline-day-tick: #ccc;
+  --timeline-tick-label: #666;
+  --timeline-week-name: #333;
+  --timeline-week-dates: #888;
+  --timeline-date-label: #333;
+  --timeline-day-tick-label: #999;
+  --tooltip-bg: #ffffff;
+  --tooltip-border: #d0d0d0;
+  --tooltip-shadow: rgba(0, 0, 0, 0.15);
+  --tooltip-date: #888;
+  --tooltip-desc: #333;
+  --overflow-panel-bg: #ffffff;
+  --overflow-item-hover: rgba(0, 0, 0, 0.06);
+  --overflow-item-date: #888;
+  --overflow-item-desc: #333;
+}

@@ -1,0 +1,112 @@
+.panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.toggleBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.toggleBtn:hover {
+    color: var(--text-primary);
+}
+
+.toggleIcon {
+    font-size: 10px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 0 20px 16px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.colorRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.colorInput {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 2px;
+    background: var(--bg-input);
+}
+
+.colorInput::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.colorInput::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+}
+
+.hexInput {
+    width: 80px;
+    padding: 6px 8px;
+    font-size: 13px;
+    font-family: monospace;
+    color: var(--text-primary);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.hexInput:focus {
+    border-color: var(--border-hover);
+}
+
+.resetBtn {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-button);
+    border: 1px solid var(--border-button);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.resetBtn:hover {
+    background: var(--bg-button-hover);
+    border-color: var(--border-button-hover);
+}

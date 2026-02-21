@@ -1,0 +1,121 @@
+.panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.toggleBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.toggleBtn:hover {
+    color: var(--text-primary);
+}
+
+.toggleIcon {
+    font-size: 10px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 0 20px 16px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.textInput,
+.dateInput {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.textInput:focus,
+.dateInput:focus {
+    border-color: var(--border-hover);
+}
+
+.textInput {
+    width: 260px;
+}
+
+.dateInput {
+    width: 160px;
+}
+
+.dateRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.dateSeparator {
+    padding-bottom: 8px;
+    color: var(--date-separator);
+    font-size: 14px;
+}
+
+.updateBtn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--color-success);
+    color: var(--bg-app);
+    border-radius: 4px;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.updateBtn:hover {
+    background: var(--color-success-hover);
+}
+
+.updateBtn:active {
+    background: var(--color-success-active);
+}
+
+.updateBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.error {
+    font-size: 11px;
+    color: var(--color-error);
+    min-height: 14px;
+}

@@ -1,0 +1,184 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 24px;
+    width: 380px;
+    max-width: 90vw;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    margin: 0 0 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dateInput,
+.descInput {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.dateInput:focus,
+.descInput:focus {
+    border-color: var(--border-hover);
+}
+
+.teamToggle {
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.teamBtn {
+    flex: 1;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--bg-input);
+    color: var(--text-dim);
+    transition: background 0.2s, color 0.2s;
+}
+
+.teamBtn:hover {
+    background: var(--bg-button);
+    color: var(--text-primary);
+}
+
+.teamBtn:first-child {
+    border-right: 1px solid var(--border-color);
+}
+
+.teamBtnRed {
+    background: var(--color-red-team);
+    color: #fff;
+}
+
+.teamBtnBlue {
+    background: var(--color-blue-team);
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.saveBtn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--color-success);
+    color: var(--bg-app);
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.saveBtn:hover {
+    background: var(--color-success-hover);
+}
+
+.saveBtn:active {
+    background: var(--color-success-active);
+}
+
+.cancelBtn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--bg-button);
+    color: var(--text-primary);
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.cancelBtn:hover {
+    background: var(--bg-button-hover);
+}
+
+.cancelBtn:active {
+    background: var(--bg-button-active);
+}
+
+.deleteBtn {
+    margin-left: auto;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--color-error);
+    background: transparent;
+    color: var(--color-error);
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.deleteBtn:hover {
+    background: color-mix(in srgb, var(--color-error) 10%, transparent);
+}
+
+.deleteBtn:active {
+    background: color-mix(in srgb, var(--color-error) 20%, transparent);
+}
+
+.deleteBtnConfirm {
+    background: var(--color-error);
+    color: #fff;
+}
+
+.deleteBtnConfirm:hover {
+    background: #c0392b;
+}
+
+.error {
+    font-size: 11px;
+    color: var(--color-error);
+    min-height: 14px;
+}

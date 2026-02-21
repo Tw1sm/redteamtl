@@ -1,0 +1,408 @@
+.container {
+    position: relative;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.timeline {
+    position: relative;
+    padding: 180px 40px 180px 40px;
+    margin: 0 auto;
+}
+
+.bar {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    height: 25px;
+    background: var(--color-timeline-bar);
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ticksContainer {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+}
+
+.tick {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--timeline-tick);
+    transform: translateX(-50%);
+}
+
+.tickLabel {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 11px;
+    color: var(--timeline-tick-label);
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
+    padding-left: 6px;
+}
+
+.weekName {
+    font-weight: 600;
+    color: var(--timeline-week-name);
+    font-size: 11px;
+}
+
+.weekDates {
+    font-size: 9px;
+    color: var(--timeline-week-dates);
+}
+
+.dateLabels {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.dateLabelStart,
+.dateLabelEnd {
+    position: absolute;
+    top: -24px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--timeline-date-label);
+    white-space: nowrap;
+}
+
+.dateLabelStart {
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.dateLabelEnd {
+    right: 0;
+    transform: translateX(50%);
+}
+
+.dayTick {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--timeline-day-tick);
+    opacity: 0.3;
+    transform: translateX(-50%);
+}
+
+.dayTickLabel {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    color: var(--timeline-day-tick-label);
+    white-space: nowrap;
+}
+
+.eventsContainer {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+}
+
+.event {
+    position: absolute;
+    cursor: pointer;
+    transform: translateX(-50%);
+    transition: filter 0.2s;
+}
+
+.event:hover .flagPole {
+    opacity: 1;
+}
+
+.event:hover .flagHead {
+    transform: translateX(-1px) scale(1.4);
+    filter: brightness(1.3) drop-shadow(0 0 4px currentColor);
+}
+
+.event:hover .eventLabel {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.eventRed {
+    bottom: 18px;
+}
+
+.eventBlue {
+    top: 18px;
+}
+
+.flagPole {
+    position: absolute;
+    width: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+    transition: opacity 0.2s, width 0.2s;
+    border-radius: 1px;
+}
+
+.flagPoleRed {
+    background: var(--color-flag-pole);
+    bottom: 0;
+}
+
+.flagPoleBlue {
+    background: var(--color-flag-pole);
+    top: 0;
+}
+
+.flagHead {
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    left: 50%;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.flagHeadRed {
+    background: var(--color-red-team);
+    transform: translateX(-1px);
+}
+
+.flagHeadBlue {
+    background: var(--color-blue-team);
+    transform: translateX(-1px);
+}
+
+.eventLabel {
+    position: absolute;
+    font-size: 11px;
+    white-space: nowrap;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.2s, font-weight 0.2s, left 0.2s;
+}
+
+.eventLabelRed {
+    color: var(--color-red-team);
+}
+
+.eventLabelBlue {
+    color: var(--color-blue-team);
+}
+
+/* Selected event highlight */
+.eventSelected .flagPole {
+    opacity: 1;
+    width: 3px;
+}
+
+.eventSelected .flagHead {
+    transform: translateX(-1px) scale(1.5);
+    filter: brightness(1.4) drop-shadow(0 0 6px currentColor);
+}
+
+.eventSelected .eventLabel {
+    font-weight: 700;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tooltip-bg);
+    border: 1px solid var(--tooltip-border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 50;
+    box-shadow: 0 4px 16px var(--tooltip-shadow);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.event:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltipRed {
+    border-color: color-mix(in srgb, var(--color-red-team) 40%, transparent);
+}
+
+.tooltipBlue {
+    border-color: color-mix(in srgb, var(--color-blue-team) 40%, transparent);
+}
+
+.tooltipDate {
+    color: var(--tooltip-date);
+    font-size: 11px;
+}
+
+.tooltipTeam {
+    font-weight: 600;
+    margin: 2px 0;
+}
+
+.tooltipRed .tooltipTeam {
+    color: var(--color-red-team);
+}
+
+.tooltipBlue .tooltipTeam {
+    color: var(--color-blue-team);
+}
+
+.tooltipDesc {
+    color: var(--tooltip-desc);
+}
+
+/* Cluster overflow badge */
+.clusterOverflow {
+    z-index: 10;
+}
+
+.overflowBadge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.overflowBadge:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.overflowBadgeRed {
+    background: color-mix(in srgb, var(--color-red-team) 25%, transparent);
+    color: var(--color-red-team);
+    border: 1px solid color-mix(in srgb, var(--color-red-team) 50%, transparent);
+}
+
+.overflowBadgeBlue {
+    background: color-mix(in srgb, var(--color-blue-team) 25%, transparent);
+    color: var(--color-blue-team);
+    border: 1px solid color-mix(in srgb, var(--color-blue-team) 50%, transparent);
+}
+
+/* Overflow expansion panel */
+.overflowPanel {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--overflow-panel-bg);
+    border: 1px solid var(--tooltip-border);
+    border-radius: 8px;
+    padding: 6px 0;
+    z-index: 60;
+    min-width: 200px;
+    max-width: 320px;
+    box-shadow: 0 8px 24px var(--tooltip-shadow);
+    animation: panelFadeIn 0.15s ease-out;
+}
+
+.overflowPanelRed {
+    border-color: color-mix(in srgb, var(--color-red-team) 40%, transparent);
+}
+
+.overflowPanelBlue {
+    border-color: color-mix(in srgb, var(--color-blue-team) 40%, transparent);
+}
+
+@keyframes panelFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.overflowItem {
+    display: flex;
+    gap: 8px;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+    font-size: 12px;
+    align-items: baseline;
+}
+
+.overflowItem:hover {
+    background: var(--overflow-item-hover);
+}
+
+.overflowItemDate {
+    color: var(--overflow-item-date);
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.overflowItemDesc {
+    color: var(--overflow-item-desc);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Event enter animation */
+.event {
+    animation: eventFadeIn 0.3s ease-out;
+}
+
+@keyframes eventFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Focus styles for keyboard accessibility */
+.event:focus {
+    outline: none;
+}
+
+.event:focus-visible .flagHead {
+    transform: translateX(-1px) scale(1.4);
+    filter: brightness(1.3) drop-shadow(0 0 4px currentColor);
+}
+
+.event:focus-visible .flagPole {
+    opacity: 1;
+}
+
+.event:focus-visible .tooltip {
+    opacity: 1;
+}

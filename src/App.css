@@ -1,0 +1,121 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.app-header {
+  padding: 2rem 2rem 1rem;
+}
+
+.app-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-logo {
+  flex-shrink: 0;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.02em;
+}
+
+.app-subtitle {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.app-main {
+  padding: 1rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  width: fit-content;
+}
+
+.view-toggle-btn {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-app);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.view-toggle-btn:not(:last-child) {
+  border-right: 1px solid var(--border-color);
+}
+
+.view-toggle-btn:hover {
+  background: var(--bg-button);
+  color: var(--text-primary);
+}
+
+.view-toggle-active {
+  background: var(--bg-button);
+  color: var(--text-primary);
+}
+
+.view-toggle-active:hover {
+  background: var(--bg-button-hover);
+}
+
+.view-toggle-btn:active {
+  background: var(--bg-button-hover);
+  color: var(--text-primary);
+}
+
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.zoom-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zoom-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.zoom-slider {
+  width: 100px;
+  accent-color: var(--color-red-team);
+  cursor: pointer;
+}
+
+.zoom-value {
+  font-size: 12px;
+  color: var(--text-muted);
+  min-width: 36px;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+}
