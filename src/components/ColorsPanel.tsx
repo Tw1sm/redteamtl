@@ -75,9 +75,19 @@ export default function ColorsPanel({
             onChange={(v) => update("redTeam", v)}
           />
           <ColorField
+            label="Red Label"
+            value={colors.redLabel}
+            onChange={(v) => update("redLabel", v)}
+          />
+          <ColorField
             label="Blue Team"
             value={colors.blueTeam}
             onChange={(v) => update("blueTeam", v)}
+          />
+          <ColorField
+            label="Blue Label"
+            value={colors.blueLabel}
+            onChange={(v) => update("blueLabel", v)}
           />
           <ColorField
             label="Timeline Bar"

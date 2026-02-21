@@ -36,6 +36,8 @@ function applyToDOM(settings: ThemeSettings) {
   root.style.colorScheme = settings.theme;
   root.style.setProperty("--color-red-team", settings.colors.redTeam);
   root.style.setProperty("--color-blue-team", settings.colors.blueTeam);
+  root.style.setProperty("--color-red-label", settings.colors.redLabel);
+  root.style.setProperty("--color-blue-label", settings.colors.blueLabel);
   root.style.setProperty("--color-timeline-bar", settings.colors.timelineBar);
   root.style.setProperty("--color-flag-pole", settings.colors.flagPole);
 }

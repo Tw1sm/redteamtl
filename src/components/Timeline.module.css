@@ -175,11 +175,11 @@
 }
 
 .eventLabelRed {
-    color: var(--color-red-team);
+    color: var(--color-red-label);
 }
 
 .eventLabelBlue {
-    color: var(--color-blue-team);
+    color: var(--color-blue-label);
 }
 
 /* Selected event highlight */

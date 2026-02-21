@@ -113,6 +113,8 @@ export function importFromJson(file: File): Promise<AppState> {
           result.colors = {
             redTeam: isHex(c.redTeam) ? c.redTeam : DEFAULT_COLORS.redTeam,
             blueTeam: isHex(c.blueTeam) ? c.blueTeam : DEFAULT_COLORS.blueTeam,
+            redLabel: isHex(c.redLabel) ? c.redLabel : DEFAULT_COLORS.redLabel,
+            blueLabel: isHex(c.blueLabel) ? c.blueLabel : DEFAULT_COLORS.blueLabel,
             timelineBar: isHex(c.timelineBar) ? c.timelineBar : DEFAULT_COLORS.timelineBar,
             flagPole: isHex(c.flagPole) ? c.flagPole : DEFAULT_COLORS.flagPole,
           };

@@ -23,6 +23,8 @@ export type Theme = "dark" | "light";
 export interface CustomColors {
   redTeam: string;
   blueTeam: string;
+  redLabel: string;
+  blueLabel: string;
   timelineBar: string;
   flagPole: string;
 }
@@ -30,6 +32,8 @@ export interface CustomColors {
 export const DEFAULT_COLORS_DARK: CustomColors = {
   redTeam: "#e74c3c",
   blueTeam: "#3498db",
+  redLabel: "#e74c3c",
+  blueLabel: "#3498db",
   timelineBar: "#333333",
   flagPole: "#222222",
 };
@@ -37,6 +41,8 @@ export const DEFAULT_COLORS_DARK: CustomColors = {
 export const DEFAULT_COLORS_LIGHT: CustomColors = {
   redTeam: "#e74c3c",
   blueTeam: "#3498db",
+  redLabel: "#e74c3c",
+  blueLabel: "#3498db",
   timelineBar: "#c2c2c2",
   flagPole: "#222222",
 };

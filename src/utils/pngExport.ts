@@ -12,6 +12,8 @@ export async function exportToPng(config?: TimelineConfig): Promise<void> {
   const rootStyle = getComputedStyle(document.documentElement);
   const redColor = rootStyle.getPropertyValue("--color-red-team").trim() || "#e74c3c";
   const blueColor = rootStyle.getPropertyValue("--color-blue-team").trim() || "#3498db";
+  const redLabelColor = rootStyle.getPropertyValue("--color-red-label").trim() || redColor;
+  const blueLabelColor = rootStyle.getPropertyValue("--color-blue-label").trim() || blueColor;
   const poleColor = rootStyle.getPropertyValue("--color-flag-pole").trim() || "#222222";
 
   const container = element.parentElement;
@@ -149,10 +151,10 @@ export async function exportToPng(config?: TimelineConfig): Promise<void> {
         background: #ffffff !important;
       }
       #png-export-wrapper [class*="eventLabelRed"] {
-        color: ${redColor} !important;
+        color: ${redLabelColor} !important;
       }
       #png-export-wrapper [class*="eventLabelBlue"] {
-        color: ${blueColor} !important;
+        color: ${blueLabelColor} !important;
       }
       /* Flag poles */
       #png-export-wrapper [class*="flagPoleRed"] {
