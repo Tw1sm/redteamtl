@@ -15,6 +15,7 @@ export interface TimelineConfig {
 export interface AppState {
   config: TimelineConfig;
   events: TimelineEvent[];
+  colors?: CustomColors;
 }
 
 export type Theme = "dark" | "light";
@@ -26,9 +27,18 @@ export interface CustomColors {
   flagPole: string;
 }
 
-export const DEFAULT_COLORS: CustomColors = {
+export const DEFAULT_COLORS_DARK: CustomColors = {
   redTeam: "#e74c3c",
   blueTeam: "#3498db",
   timelineBar: "#333333",
   flagPole: "#222222",
 };
+
+export const DEFAULT_COLORS_LIGHT: CustomColors = {
+  redTeam: "#e74c3c",
+  blueTeam: "#3498db",
+  timelineBar: "#c2c2c2",
+  flagPole: "#222222",
+};
+
+export const DEFAULT_COLORS = DEFAULT_COLORS_DARK;

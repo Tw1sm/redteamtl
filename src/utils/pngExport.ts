@@ -145,6 +145,9 @@ export async function exportToPng(config?: TimelineConfig): Promise<void> {
         color: #999 !important;
       }
       /* Event labels */
+      #png-export-wrapper [class*="eventLabel"] {
+        background: #ffffff !important;
+      }
       #png-export-wrapper [class*="eventLabelRed"] {
         color: ${redColor} !important;
       }

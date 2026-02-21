@@ -9,7 +9,7 @@ import EventForm from "./components/EventForm";
 import EventEditor from "./components/EventEditor";
 import EventList from "./components/EventList";
 import Toolbar from "./components/Toolbar";
-import type { TimelineEvent } from "./types";
+import type { TimelineEvent, AppState } from "./types";
 import "./App.css";
 
 type ViewMode = "timeline" | "list";
@@ -26,6 +26,17 @@ function App() {
 
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
+  }
+
+  function handleExportState(): AppState {
+    return { ...exportState(), colors };
+  }
+
+  function handleLoadState(imported: AppState) {
+    if (imported.colors) {
+      setColors(imported.colors);
+    }
+    loadState(imported);
   }
 
   const startFormatted = format(parseISO(config.startDate), "MMM d, yyyy");
@@ -58,8 +69,8 @@ function App() {
         </p>
       </header>
       <Toolbar
-        exportState={exportState}
-        loadState={loadState}
+        exportState={handleExportState}
+        loadState={handleLoadState}
         config={config}
         theme={theme}
         toggleTheme={toggleTheme}

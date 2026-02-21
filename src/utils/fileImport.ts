@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { parseISO, isValid } from "date-fns";
 import type { AppState, TimelineEvent } from "../types";
+import { DEFAULT_COLORS } from "../types";
 
 function isValidISODate(value: unknown): boolean {
   if (typeof value !== "string") return false;
@@ -96,14 +97,28 @@ export function importFromJson(file: File): Promise<AppState> {
           (event: unknown, i: number) => validateEvent(event, i)
         );
 
-        resolve({
+        const result: AppState = {
           config: {
             title: config.title,
             startDate: config.startDate,
             endDate: config.endDate,
           },
           events,
-        });
+        };
+
+        if (typeof data.colors === "object" && data.colors !== null) {
+          const c = data.colors as Record<string, unknown>;
+          const isHex = (v: unknown): v is string =>
+            typeof v === "string" && /^#[0-9a-fA-F]{3,8}$/.test(v);
+          result.colors = {
+            redTeam: isHex(c.redTeam) ? c.redTeam : DEFAULT_COLORS.redTeam,
+            blueTeam: isHex(c.blueTeam) ? c.blueTeam : DEFAULT_COLORS.blueTeam,
+            timelineBar: isHex(c.timelineBar) ? c.timelineBar : DEFAULT_COLORS.timelineBar,
+            flagPole: isHex(c.flagPole) ? c.flagPole : DEFAULT_COLORS.flagPole,
+          };
+        }
+
+        resolve(result);
       } catch (err) {
         reject(
           err instanceof Error

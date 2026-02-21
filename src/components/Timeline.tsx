@@ -333,7 +333,7 @@ export default function Timeline({
       <div
         key={positioned.event.id}
         className={`${styles.event} ${teamClass}${isSelected ? ` ${styles.eventSelected}` : ""}`}
-        style={{ left: `${positioned.percent}%` }}
+        style={{ left: `${positioned.percent}%`, zIndex: 5 - lane }}
         onClick={() => onEventClick?.(positioned.event)}
         role="button"
         tabIndex={0}
@@ -386,15 +386,6 @@ export default function Timeline({
       <div id="timeline-capture" className={styles.timeline} style={{ width: `${timelineWidth}px` }}>
         <div className={styles.bar} />
 
-        <div className={styles.dateLabels}>
-          <span className={styles.dateLabelStart}>
-            {format(startDate, "MMM d, yyyy")}
-          </span>
-          <span className={styles.dateLabelEnd}>
-            {format(endDate, "MMM d, yyyy")}
-          </span>
-        </div>
-
         <div className={styles.ticksContainer}>
           {dayTicks.map((dt, i) => (
             <div
@@ -425,7 +416,7 @@ export default function Timeline({
         </div>
 
         <div className={styles.eventsContainer}>
-          {red.map((p) => renderEvent(p, "red"))}
+          {[...red].sort((a, b) => (b.event.lane ?? 1) - (a.event.lane ?? 1)).map((p) => renderEvent(p, "red"))}
           {redOverflows.map((ov, i) => (
             <ClusterOverflow
               key={`red-overflow-${i}`}
@@ -437,7 +428,7 @@ export default function Timeline({
               onEventClick={onEventClick}
             />
           ))}
-          {blue.map((p) => renderEvent(p, "blue"))}
+          {[...blue].sort((a, b) => (b.event.lane ?? 1) - (a.event.lane ?? 1)).map((p) => renderEvent(p, "blue"))}
           {blueOverflows.map((ov, i) => (
             <ClusterOverflow
               key={`blue-overflow-${i}`}
